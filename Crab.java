@@ -3,6 +3,9 @@ import greenfoot.*;
 /**
  * This class defines a crab. Crabs live on the beach.
  */
+/**  
+  *  github is crazy
+  */
 public class Crab extends Actor
 {
   static int WormEaten=0;
