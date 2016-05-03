@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=CrabWorld
+comment1.params=
+comment1.target=CrabWorld()
+comment1.text=Crab\ qq\=new\ Crab()
+comment2.params=number
+comment2.target=void\ generateLobster(int)
+comment3.params=
+comment3.target=void\ detectGameOver()
+comment4.params=
+comment4.target=void\ act()
+numComments=5
