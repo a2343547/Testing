@@ -11,6 +11,7 @@ public class CrabWorld extends World
     public CrabWorld() 
     {
         super(560, 560, 1);
+        ResetWormsEaten();
         addObject(new Crab(),getWidth()/2,getHeight()/2);
         int i=0;
         while(i<10)
@@ -50,6 +51,11 @@ public class CrabWorld extends World
             showText("Game Complete",getWidth()/2,getHeight()/2);
             Greenfoot.stop();
         }
+    }
+    /**Reset the value of WormsEaten(Put this method in the constructor of CrabWorld)*/
+    public void ResetWormsEaten()
+    {
+       Crab.WormEaten = 0;
     }
     public void act()
     {  String stringValue = Integer.toString(Crab.WormEaten);
