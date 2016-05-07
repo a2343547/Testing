@@ -33,7 +33,7 @@ public class Lobster extends Actor
          gs.play();
         removeTouching(Crab.class);
     }
-    }
+   }
    public Crab detectCrab(int radius)
     {
         List l= getObjectsInRange(radius,Crab.class);

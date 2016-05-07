@@ -11,6 +11,7 @@ public class CrabWorld extends World
     public CrabWorld() 
     {
         super(560, 560, 1);
+        setPaintOrder(Crab.class,Lobster.class,Worm.class,Hole.class);
         ResetWormsEaten();
         addObject(new Crab(),getWidth()/2,getHeight()/2);
         int i=0;
@@ -26,7 +27,24 @@ public class CrabWorld extends World
             }
         }
         generateLobster(2);
+        generateHole(3);
     }
+    public void generateHole(int number)
+    {
+        int i=0;
+        while(i<number)
+        {
+            int x=Greenfoot.getRandomNumber(getWidth());
+            int y=Greenfoot.getRandomNumber(getHeight());
+            List l=getObjectsAt(x,y,Hole.class);
+            if(l.size()==0)
+            {
+                addObject(new Hole(),x,y);
+                i++;
+            }
+        }
+    }
+    
     public void generateLobster(int number)
     {
         int i=0;
