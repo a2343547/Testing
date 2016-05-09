@@ -16,30 +16,21 @@ public class Hole extends Actor
     {
         detect();
     }
+
     public void detect()
-   {
-    if(isTouching(Crab.class))    {
-        int timer=500000;
-        while(timer>0)
-        {
-          getOneIntersectingObject(Crab.class).setLocation(getX(), getY());           
-          timer--;
-        } 
-        getOneIntersectingObject(Crab.class).setLocation(getX()+Greenfoot.getRandomNumber(50)+50, getY()+Greenfoot.getRandomNumber(50)+50);
-    }
-    if(isTouching(Lobster.class))    
-    {   
-        int timer=500000;
-        while(timer>0)
-        {
-          getOneIntersectingObject(Lobster.class).setLocation(getX(), getY());           
-          timer--;          
+    {
+        Crab crab=((Crab)getOneIntersectingObject(Crab.class));
+        Lobster lobster=((Lobster)getOneIntersectingObject(Lobster.class));
+        if(isTouching(Crab.class)&&crab.holeTimer<=0)    {
+            crab.holeTimer=30;
+            crab.setLocation(getX(),getY());
         }
-        getOneIntersectingObject(Lobster.class).setLocation(getX()+Greenfoot.getRandomNumber(50)+50, getY()+Greenfoot.getRandomNumber(50)+50);
+        if(
+        isTouching(Lobster.class)&&lobster.holeTimer<=0)    
+        {
+            lobster.holeTimer=30;
+            lobster.setLocation(getX(),getY());
+        }
     }
-   }
-   public void wait(int time)
-   {
-        Greenfoot.delay(time);
-   }
+
 }
