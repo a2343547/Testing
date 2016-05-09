@@ -75,6 +75,11 @@ public class CrabWorld extends World
     {
        Crab.WormEaten = 0;
     }
+    
+    public void gameFailed(){
+        showText("Game Over",getWidth()/2,getHeight()/2);
+        Greenfoot.stop();
+    }
     public void act()
     {  String stringValue = Integer.toString(Crab.WormEaten);
         showText("WormsEaten:"+stringValue,80,30);

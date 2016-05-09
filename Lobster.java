@@ -32,6 +32,7 @@ public class Lobster extends Actor
     {    GreenfootSound gs=new GreenfootSound("slurp.wav");
          gs.play();
         removeTouching(Crab.class);
+        ((CrabWorld)getWorld()).gameFailed();
     }
    }
    public Crab detectCrab(int radius)
